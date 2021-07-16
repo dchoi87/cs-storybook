@@ -33,3 +33,13 @@ LeftRight.propTypes = {
     background: PropTypes.string,
     cta: PropTypes.bool,
 };
+
+LeftRight.defaultProps = {
+    reverse: false,
+    img: 'https://fakeimg.pl/800x600/cccccc,128/7d7d7d,255/?text=Img&font=lobster',
+    primaryText: 'Lorem ipsum dolor sit amet',
+    secondaryText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tincidunt odio sit amet nulla pellentesque lobortis. Cras porttitor tristique felis vel accumsan.',
+    color: '#000',
+    background: '#fff',
+    cta: false
+};

@@ -4,15 +4,14 @@ import { LeftRight } from './Left-Right';
 <Meta
     title="Components/Left Right"
     component={LeftRight}
+    args={ LeftRight.defaultProps }
     argTypes={{
         img: {
             name: "Image",
         },
         reverse: {
             name: "Reverse",
-            control: {
-                type: "boolean",
-            },
+            control: { type: "boolean" }
         },
         primaryText: {
             name: "Primary Text",
@@ -25,31 +24,18 @@ import { LeftRight } from './Left-Right';
         },
         color: {
             name: "Color",
-            control: {
-                type: "color",
-            },
+            control: { type: "color" }
         },
         background: {
             name: "Background",
-            control: {
-                type: "color",
-            },
-        },
-    }}
-    args={{
-        reverse: false,
-        img: 'https://fakeimg.pl/800x600/cccccc,128/7d7d7d,255/?text=Img&font=lobster',
-        primaryText: 'Lorem ipsum dolor sit amet',
-        secondaryText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tincidunt odio sit amet nulla pellentesque lobortis. Cras porttitor tristique felis vel accumsan.',
-        color: '#000',
-        background: '#fff',
-        cta: false
+            control: { type: "color" }
+        }
     }}
 />
 
-# Two Column
+# Left Right Component
 
-## Light
+## Default
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mi eros, semper nec massa eu, semper aliquet ipsum. Nunc molestie libero sit amet bibendum hendrerit. Curabitur egestas auctor ultrices. Nunc pharetra massa non nibh sodales condimentum. Integer laoreet lacus non enim interdum finibus.
 
@@ -58,32 +44,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mi eros, semper n
     args={{
         img: "https://fakeimg.pl/800x600/cccccc,128/7d7d7d,255/?text=Img&font=lobster",
         reverse: false
-    }}>
-    {(args) => <LeftRight {...args} />}
-</Story>
-
-## Light w/ CTA
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mi eros, semper nec massa eu, semper aliquet ipsum. Nunc molestie libero sit amet bibendum hendrerit. Curabitur egestas auctor ultrices. Nunc pharetra massa non nibh sodales condimentum. Integer laoreet lacus non enim interdum finibus.
-
-<Story
-    name="Two Col w/ CTA"
-    args={{
-        cta: true
-    }}>
-    {(args) => <LeftRight {...args} />}
-</Story>
-
-## Dark Reverse
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mi eros, semper nec massa eu, semper aliquet ipsum. Nunc molestie libero sit amet bibendum hendrerit. Curabitur egestas auctor ultrices. Nunc pharetra massa non nibh sodales condimentum. Integer laoreet lacus non enim interdum finibus.
-
-<Story
-    name="Two Col Dark Reverse"
-    args={{
-        color: "#fff",
-        background: "#424753",
-        reverse: true
     }}>
     {(args) => <LeftRight {...args} />}
 </Story>
