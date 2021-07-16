@@ -4,7 +4,7 @@
 
 Placeholder
 
-## Install
+## Installation
 
 ```
 npm install
@@ -28,7 +28,7 @@ Output directory is `storybook-static`
 ```
 npm run deploy-storybook
 ```
-Deploys to [Github Pages](https://dchoi87.github.io/cs-storybook/)
+Deploys to [Github Pages](https://dchoi87.github.io/cs-storybook/) (gh-pages branch)
 
 ## Notes
 * `node-sass` needs to be install as dev dependency (compatibility error otherwise)
