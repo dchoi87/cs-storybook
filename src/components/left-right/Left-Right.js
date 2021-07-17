@@ -4,19 +4,19 @@ import './Left-Right.scss';
 
 export const LeftRight = ({ img, reverse, primaryText, secondaryText, color, background, cta }) => {
     return (
-        <div className="grid-container">
-            <div className={ `grid two-col ${reverse ? 'reverse' : ''}` }>
-                <div className="left-block" style={{ color, background }}>
+        <div className="cs-left-right">
+            <div className={ `cs-left-right__grid ${reverse ? 'reverse' : ''}` }>
+                <div className="cs-left-right__content--left" style={{ color, background }}>
                     <h1>{ primaryText }</h1>
                     <p>{ secondaryText }</p>
                     {
                         cta &&
-                        <div className="cta">
-                            <button>Hello!</button>
+                        <div className="cs-left-right__cta">
+                            <button>Button</button>
                         </div>
                     }
                 </div>
-                <div className="right-block">
+                <div className="cs-left-right__content--right">
                     <img alt="" className="responsive" src={ img } />
                 </div>
             </div>

@@ -1,47 +1,54 @@
-.grid {
-    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    border: 1px dashed #ccc;
-    font-weight: 300;
+// global
+.responsive {
+    display: block;
+    width: 100%;
+    height: auto;
+}
 
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-            "right"
-            "left";
+// SASS x BEM
+.cs-left-right {
+    @at-root #{&}__grid {
+        font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        border: 1px dashed #ccc;
+        font-weight: 300;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+                "right"
+                "left";
 
-    h1, p {
-        margin: 5px 0;
-        display: block;
+        @media screen and (min-width: 768px) {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-areas: "left right";
+        }
     }
-    .responsive {
-        display: block;
-        width: 100%;
-        height: auto;
+    @at-root #{&}__content {
+        &--left {
+            grid-area: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 15px;
+
+            h1, p {
+                margin: 5px 0;
+                display: block;
+            }
+        }
+        &--right {
+            grid-area: right;
+        }
     }
-    .left-block {
-        grid-area: left;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 15px;
-    }
-    .right-block {
-        grid-area: right;
-    }
-    .cta {
+    @at-root #{&}__cta {
         margin-top: 15px;
         text-align: center;
-    }
-    // media queries
-    @media screen and (min-width: 768px) {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-areas: "left right";
 
-        .cta {
+        @media screen and (min-width: 768px) {
             text-align: left;
         }
-
-        &.reverse {
+    }
+    @at-root #{&} .reverse {
+        @media screen and (min-width: 768px) {
             grid-template-areas: "right left";
         }
     }
