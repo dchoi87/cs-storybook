@@ -2,21 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Left-Right.scss';
 
-export const LeftRight = ({ img, reverse, primaryText, secondaryText, color, background, cta }) => {
+export const LeftRight = ({ img, reverse, primaryText, secondaryText, color, background, cta, roundedCorners }) => {
     return (
-        <div className="cs-left-right">
-            <div className={ `cs-left-right__grid ${reverse ? 'reverse' : ''}` }>
-                <div className="cs-left-right__content--left" style={{ color, background }}>
+        <div className={ `cs-lr ${roundedCorners ? 'cs-lr--rounded' : ''}` }>
+            <div className={ `cs-lr__grid ${reverse ? 'reverse' : ''}` }>
+                <div className="cs-lr__content-left" style={{ color, background }}>
                     <h1>{ primaryText }</h1>
                     <p>{ secondaryText }</p>
                     {
                         cta &&
-                        <div className="cs-left-right__cta">
+                        <div className="cs-lr__cta">
                             <button>Button</button>
                         </div>
                     }
                 </div>
-                <div className="cs-left-right__content--right">
+                <div className="cs-lr__content-right">
                     <img alt="" className="responsive" src={ img } />
                 </div>
             </div>
@@ -32,6 +32,7 @@ LeftRight.propTypes = {
     color: PropTypes.string,
     background: PropTypes.string,
     cta: PropTypes.bool,
+    roundedCorners: PropTypes.bool,
 };
 
 LeftRight.defaultProps = {
@@ -41,5 +42,6 @@ LeftRight.defaultProps = {
     secondaryText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tincidunt odio sit amet nulla pellentesque lobortis. Cras porttitor tristique felis vel accumsan.',
     color: '#000',
     background: '#fff',
-    cta: false
+    cta: false,
+    roundedCorners: false,
 };

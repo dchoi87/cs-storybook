@@ -6,11 +6,13 @@
 }
 
 // SASS x BEM
-.cs-left-right {
-    @at-root #{&}__grid {
-        font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        border: 1px dashed #ccc;
-        font-weight: 300;
+.cs-lr {
+    $self: &;
+    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    border: 1px dashed #ccc;
+
+    &__grid {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-areas:
@@ -22,8 +24,8 @@
             grid-template-areas: "left right";
         }
     }
-    @at-root #{&}__content {
-        &--left {
+    &__content {
+        &-left {
             grid-area: left;
             display: flex;
             flex-direction: column;
@@ -35,11 +37,11 @@
                 display: block;
             }
         }
-        &--right {
+        &-right {
             grid-area: right;
         }
     }
-    @at-root #{&}__cta {
+    &__cta {
         margin-top: 15px;
         text-align: center;
 
@@ -47,9 +49,21 @@
             text-align: left;
         }
     }
-    @at-root #{&} .reverse {
+    & .reverse {
         @media screen and (min-width: 768px) {
             grid-template-areas: "right left";
         }
     }
+
+    &--rounded {
+        border-radius: 7px;
+        overflow: hidden;
+    }
 }
+
+// Dev Notes:
+// * set variable: $self: &
+// * target variable: #{$self}
+//      ex).cs-left-right
+// * root of style sheet: @at-root #{$self}__grid
+//      ex) .cs-left-right__grid (at top level)
