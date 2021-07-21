@@ -2,22 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Left-Right.scss';
 
-export const LeftRight = ({ img, reverse, primaryText, secondaryText, color, background, cta, roundedCorners }) => {
+export const LeftRight = ({ src, reverse, content, background, roundedCorners }) => {
     return (
         <div className={ `cs-lr ${roundedCorners ? 'cs-lr--rounded' : ''}` }>
             <div className={ `cs-lr__grid ${reverse ? 'reverse' : ''}` }>
-                <div className="cs-lr__content-left" style={{ color, background }}>
-                    <h1>{ primaryText }</h1>
-                    <p>{ secondaryText }</p>
-                    {
-                        cta &&
-                        <div className="cs-lr__cta">
-                            <button>Button</button>
-                        </div>
-                    }
+                <div className={ `cs-lr__content-left bg-${background}` }>
+                    <div className="cs-lr__copy">
+                        { content }
+                    </div>
                 </div>
                 <div className="cs-lr__content-right">
-                    <img alt="" className="responsive" src={ img } />
+                    <div className="cs-lr__media">
+                        <img alt="" className="responsive" src={ src } />
+                    </div>
                 </div>
             </div>
         </div>
@@ -25,23 +22,17 @@ export const LeftRight = ({ img, reverse, primaryText, secondaryText, color, bac
 };
 
 LeftRight.propTypes = {
+    src: PropTypes.string,
+    content: PropTypes.string,
     reverse: PropTypes.bool,
-    img: PropTypes.string,
-    primaryText: PropTypes.string,
-    secondaryText: PropTypes.string,
-    color: PropTypes.string,
     background: PropTypes.string,
-    cta: PropTypes.bool,
     roundedCorners: PropTypes.bool,
 };
 
 LeftRight.defaultProps = {
+    src: 'https://fakeimg.pl/800x600/cccccc,128/7d7d7d,255/?text=Img&font=lobster',
+    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tincidunt odio sit amet nulla pellentesque lobortis. Cras porttitor tristique felis vel accumsan.',
     reverse: false,
-    img: 'https://fakeimg.pl/800x600/cccccc,128/7d7d7d,255/?text=Img&font=lobster',
-    primaryText: 'Lorem ipsum dolor sit amet',
-    secondaryText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tincidunt odio sit amet nulla pellentesque lobortis. Cras porttitor tristique felis vel accumsan.',
-    color: '#000',
-    background: '#fff',
-    cta: false,
+    background: 'gray-light',
     roundedCorners: false,
 };

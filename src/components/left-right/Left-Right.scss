@@ -13,6 +13,10 @@
         @media screen and (min-width: 768px) {
             grid-template-columns: repeat(2, 1fr);
             grid-template-areas: "left right";
+
+            &.reverse {
+                grid-template-areas: "right left";
+            }
         }
     }
     &__content {
@@ -22,6 +26,10 @@
             flex-direction: column;
             justify-content: center;
             padding: 15px;
+            // might need to remove when putting in other components?
+            white-space: pre-wrap;
+            font-family: "Gotham 3r", "Gotham A", "Gotham B", Arial, sans-serif;
+            font-weight: 300;
 
             h1, p {
                 margin: 5px 0;
@@ -32,20 +40,27 @@
             grid-area: right;
         }
     }
-    &__cta {
-        margin-top: 15px;
-        text-align: center;
 
-        @media screen and (min-width: 768px) {
-            text-align: left;
-        }
-    }
-    & .reverse {
-        @media screen and (min-width: 768px) {
-            grid-template-areas: "right left";
-        }
+    &__media {
+        // position: relative;
+        // overflow: hidden;
+        // padding-top: (9 / 16) * 100%;
+
+        // img,
+        // iframe {
+        //     position: absolute;
+        //     width: 100%;
+        //     height: auto;
+
+        //     left: 50%;
+        //     top: 50%;
+        //     -webkit-transform: translate(-50%,-50%);
+        //     -ms-transform: translate(-50%,-50%);
+        //     transform: translate(-50%,-50%);
+        // }
     }
 
+    // modifiers
     &--rounded {
         border-radius: 7px;
         overflow: hidden;

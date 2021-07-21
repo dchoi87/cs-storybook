@@ -1,39 +1,12 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import { LeftRight } from './Left-Right';
+import { argTypes } from './Left-Right.argTypes';
 
 <Meta
     title="Components/Left Right"
     component={LeftRight}
     args={ LeftRight.defaultProps }
-    argTypes={{
-        img: {
-            name: "Image",
-        },
-        reverse: {
-            name: "Reverse",
-            control: { type: "boolean" }
-        },
-        primaryText: {
-            name: "Primary Text",
-        },
-        secondaryText: {
-            name: "Secondary Text",
-        },
-        cta: {
-            name: "CTA",
-        },
-        color: {
-            name: "Color",
-            control: { type: "color" }
-        },
-        background: {
-            name: "Background",
-            control: { type: "color" }
-        },
-        roundedCorners: {
-            name: "Rounded Corners",
-        }
-    }}
+    argTypes={ argTypes }
 />
 
 # Left Right Component
@@ -43,10 +16,30 @@ import { LeftRight } from './Left-Right';
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mi eros, semper nec massa eu, semper aliquet ipsum. Nunc molestie libero sit amet bibendum hendrerit. Curabitur egestas auctor ultrices. Nunc pharetra massa non nibh sodales condimentum. Integer laoreet lacus non enim interdum finibus.
 
 <Story
-    name="Default"
+    name="Default" >
+    {(args) => <LeftRight {...args} />}
+</Story>
+
+## Reversed
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mi eros, semper nec massa eu, semper aliquet ipsum. Nunc molestie libero sit amet bibendum hendrerit. Curabitur egestas auctor ultrices. Nunc pharetra massa non nibh sodales condimentum. Integer laoreet lacus non enim interdum finibus.
+
+<Story
+    name="Reversed"
     args={{
-        img: "https://fakeimg.pl/800x600/cccccc,128/7d7d7d,255/?text=Img&font=lobster",
-        reverse: false
+        reverse: true
+    }}>
+    {(args) => <LeftRight {...args} />}
+</Story>
+
+## Rounded Corners
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mi eros, semper nec massa eu, semper aliquet ipsum. Nunc molestie libero sit amet bibendum hendrerit. Curabitur egestas auctor ultrices. Nunc pharetra massa non nibh sodales condimentum. Integer laoreet lacus non enim interdum finibus.
+
+<Story
+    name="Rounded Corners"
+    args={{
+        roundedCorners: true
     }}>
     {(args) => <LeftRight {...args} />}
 </Story>
