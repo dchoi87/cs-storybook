@@ -1,0 +1,20 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import { ImgCropper } from './Img-Cropper';
+
+<Meta
+    title="Tools/Image Cropper"
+    component={ ImgCropper }
+    args={{}}
+    argTypes={{}}
+/>
+
+# Image Cropper
+
+## Default
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mi eros, semper nec massa eu, semper aliquet ipsum. Nunc molestie libero sit amet bibendum hendrerit. Curabitur egestas auctor ultrices. Nunc pharetra massa non nibh sodales condimentum. Integer laoreet lacus non enim interdum finibus.
+
+<Story
+    name="Default" >
+    {(args) => <ImgCropper {...args} />}
+</Story>

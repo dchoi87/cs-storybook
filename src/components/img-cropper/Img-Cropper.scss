@@ -1,0 +1,43 @@
+.choose-file-input {
+    display: none;
+}
+
+.img-cropper {
+    .ReactCrop ,
+    img {
+        display: block;
+    }
+    &__btns {
+        display: flex;
+        gap: 15px;
+    }
+    &__btn {
+        border: 1px solid #d3d3d3;
+        border-radius: 15px;
+        background: #fafafa;
+        padding: 5px 10px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+        font-size: 14px;
+        color: #494949;
+    }
+    &__grid {
+        position: relative;
+    }
+    &__input {
+        margin: 15px 0;
+        border-radius: 7px;
+        overflow: hidden;
+    }
+    &__output {
+        position: absolute;
+        right: 15px;
+        bottom: 15px;
+        width: 20%;
+    }
+    &__preview {
+        border: 3px solid #efefef;
+        overflow: hidden;
+        border-radius: 7px;
+    }
+}
