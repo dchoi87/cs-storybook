@@ -8,4 +8,12 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  html: {
+    prettier: {
+      printWidth: 160
+    },
+    highlighter: {
+      showLineNumbers: true
+    }
+  },
 }

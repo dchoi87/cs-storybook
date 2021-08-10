@@ -5,10 +5,6 @@ export const argTypes = {
     content: {
         name: "Content",
     },
-    reverse: {
-        name: "Reverse",
-        control: { type: "boolean" }
-    },
     background: {
         name: "Background",
         control: { type: 'select' },
@@ -34,7 +30,20 @@ export const argTypes = {
             'solitude',
         ],
     },
-    roundedCorners: {
+    crop: {
+        name: "Crop",
+        control: { type: 'radio' },
+        options: [
+            'none',
+            'wide',
+            'narrow'
+        ],
+    },
+    isReverse: {
+        name: "Reverse",
+        control: { type: "boolean" }
+    },
+    hasRoundedCorners: {
         name: "Rounded Corners",
-    }
+    },
 };

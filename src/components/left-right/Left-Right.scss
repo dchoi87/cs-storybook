@@ -23,8 +23,7 @@
         &-left {
             grid-area: left;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
+            align-items: center;
             padding: 15px;
             // might need to remove when putting in other components?
             white-space: pre-wrap;
@@ -41,29 +40,42 @@
         }
     }
 
-    &__media {
-        // position: relative;
-        // overflow: hidden;
-        // padding-top: (9 / 16) * 100%;
-
-        // img,
-        // iframe {
-        //     position: absolute;
-        //     width: 100%;
-        //     height: auto;
-
-        //     left: 50%;
-        //     top: 50%;
-        //     -webkit-transform: translate(-50%,-50%);
-        //     -ms-transform: translate(-50%,-50%);
-        //     transform: translate(-50%,-50%);
-        // }
-    }
-
     // modifiers
     &--rounded {
         border-radius: 7px;
         overflow: hidden;
+    }
+
+    &--crop {
+        #{$self}__media {
+            position: relative;
+            overflow: hidden;
+            padding-top: (9 / 16) * 100%;
+    
+            img,
+            iframe {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                -webkit-transform: translate(-50%,-50%);
+                -ms-transform: translate(-50%,-50%);
+                transform: translate(-50%,-50%);
+            }
+        }
+        &.wide {
+            img,
+            iframe {
+                width: 100%;
+                height: auto;
+            }
+        }
+        &.narrow {
+            img,
+            iframe {
+                width: auto;
+                height: 100%;
+            }
+        }
     }
 }
 

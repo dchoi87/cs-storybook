@@ -50,14 +50,17 @@
     ]
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^6.3.5",
-    "@storybook/addon-essentials": "^6.3.5",
-    "@storybook/addon-links": "^6.3.5",
-    "@storybook/node-logger": "^6.3.5",
+    "@storybook/addon-a11y": "^6.3.7",
+    "@storybook/addon-actions": "^6.3.7",
+    "@storybook/addon-essentials": "^6.3.7",
+    "@storybook/addon-links": "^6.3.7",
+    "@storybook/node-logger": "^6.3.7",
     "@storybook/preset-create-react-app": "^3.2.0",
-    "@storybook/react": "^6.3.5",
+    "@storybook/react": "^6.3.7",
     "@storybook/storybook-deployer": "^2.8.10",
-    "node-sass": "^6.0.1"
+    "@whitespace/storybook-addon-html": "^5.0.0",
+    "node-sass": "^6.0.1",
+    "sass-loader": "^12.1.0"
   },
   "storybook-deployer": {
     "gitUsername": "choid5",
