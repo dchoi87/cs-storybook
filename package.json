@@ -59,7 +59,14 @@
     "@storybook/react": "^6.3.7",
     "@storybook/storybook-deployer": "^2.8.10",
     "@whitespace/storybook-addon-html": "^5.0.0",
+    "cssnano": "^5.0.7",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-postcss": "^9.0.0",
+    "gulp-sass": "^5.0.0",
+    "gulp-terser": "^2.0.1",
     "node-sass": "^6.0.1",
+    "postcss": "^8.3.6",
     "sass-loader": "^12.1.0"
   },
   "storybook-deployer": {
