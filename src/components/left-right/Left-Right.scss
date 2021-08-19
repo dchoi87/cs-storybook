@@ -1,5 +1,5 @@
 // SASS x BEM
-.cs-lr {
+.lrb {
     $self: &;
     border: 1px dashed #ccc;
 
@@ -26,7 +26,7 @@
             align-items: center;
             padding: 15px;
             // might need to remove when putting in other components?
-            white-space: pre-wrap;
+            // white-space: pre-wrap;
             font-family: "Gotham 3r", "Gotham A", "Gotham B", Arial, sans-serif;
             font-weight: 300;
 
@@ -48,32 +48,22 @@
 
     &--crop {
         #{$self}__media {
-            position: relative;
-            overflow: hidden;
-            padding-top: (9 / 16) * 100%;
-    
             img,
             iframe {
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                -webkit-transform: translate(-50%,-50%);
-                -ms-transform: translate(-50%,-50%);
-                transform: translate(-50%,-50%);
+                object-fit: cover;
             }
         }
-        &.wide {
+        &.short {
             img,
             iframe {
-                width: 100%;
-                height: auto;
+                height: 280px;
             }
         }
-        &.narrow {
+        &.medium {
             img,
             iframe {
-                width: auto;
-                height: 100%;
+                
+                height: 350px;
             }
         }
     }

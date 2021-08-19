@@ -4,20 +4,20 @@ import './Left-Right.scss';
 
 export const LeftRight = ({ src, content, background, isReverse, hasRoundedCorners, crop }) => {
     const modifiers = {
-        roundedCorners: hasRoundedCorners ? 'cs-lr--rounded' : '',
+        roundedCorners: hasRoundedCorners ? 'lrb--rounded' : '',
         reverse: isReverse ? 'reverse' : '',
-        crop: crop !== 'none' ? `cs-lr--crop ${crop}` : ''
+        crop: crop !== 'none' ? `lrb--crop ${crop}` : ''
     }
     return (
-        <div className={ `cs-lr ${modifiers.roundedCorners} ${modifiers.crop}` }>
-            <div className={ `cs-lr__grid ${modifiers.reverse}` }>
-                <div className={ `cs-lr__content-left bg-${background}` }>
-                    <div className="cs-lr__copy">
+        <div className={ `lrb ${modifiers.roundedCorners} ${modifiers.crop}` }>
+            <div className={ `lrb__grid ${modifiers.reverse}` }>
+                <div className={ `lrb__content-left bg-${background}` }>
+                    <div className="lrb__copy">
                         { content }
                     </div>
                 </div>
-                <div className="cs-lr__content-right">
-                    <div className="cs-lr__media">
+                <div className="lrb__content-right">
+                    <div className="lrb__media">
                         <img alt="" className="responsive" src={ src } />
                     </div>
                 </div>
