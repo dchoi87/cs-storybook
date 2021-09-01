@@ -9,7 +9,7 @@ const concat = require('gulp-concat');
 function scssTask() {
     return src('src/**/*.scss', { sourcemaps: true })
         .pipe(sass())
-        .pipe(postcss([cssnano()]))
+        // .pipe(postcss([cssnano()]))
         .pipe(concat('css/main.css'))
         .pipe(dest('dist', { sourcemaps: '.' }));
 }

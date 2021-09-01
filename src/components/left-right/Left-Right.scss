@@ -1,3 +1,7 @@
+// overwrite for full width shenanigans
+body {
+    overflow-x: hidden;
+}
 // SASS x BEM
 .lrb {
     $self: &;
@@ -11,10 +15,10 @@
                 "left";
 
         @media screen and (min-width: 768px) {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(2, 50%);
             grid-template-areas: "left right";
 
-            &.reverse {
+            &--reverse {
                 grid-template-areas: "right left";
             }
         }
@@ -25,8 +29,6 @@
             display: flex;
             align-items: center;
             padding: 15px;
-            // might need to remove when putting in other components?
-            // white-space: pre-wrap;
             font-family: "Gotham 3r", "Gotham A", "Gotham B", Arial, sans-serif;
             font-weight: 300;
 
@@ -56,22 +58,32 @@
         &.short {
             img,
             iframe {
-                height: 280px;
+                height: 250px;
+
+                @media screen and (min-width: 768px) {
+                    height: 350px;
+                }
+
+                @media screen and (min-width: 992px) {
+                    height: 280px;
+                }
             }
         }
         &.medium {
             img,
             iframe {
-                
                 height: 350px;
             }
         }
     }
-}
 
-// Dev Notes:
-// * set variable: $self: &
-// * target variable: #{$self}
-//      ex).cs-left-right
-// * root of style sheet: @at-root #{$self}__grid
-//      ex) .cs-left-right__grid (at top level)
+    &--full-width {
+        #{$self}__content-right {
+            @media screen and (min-width: 768px) {
+                max-width: 50vw;
+                width: 50vw;
+                position: relative;
+            }
+        }
+    }
+}

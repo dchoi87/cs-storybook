@@ -1,0 +1,68 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Styling" />
+
+# Styling
+
+## BEM
+`.[block]__[element]--[modifier]`
+
+**Examples**
+```css
+.leftright__grid {}
+.leftright__grid--reverse {}
+.leftright__container {}
+.leftright__container--rounded {}
+```
+
+## SASS
+* To set a variable: `$self: &`
+* To target a variable: `#{$self}`
+* Place at root of style sheet: `@at-root #{$self}`
+
+## BEM x SASS
+* General structure should follow: block -> element -> modifier & media queries
+* Modifier should refer to the element it's modifying
+
+**Example**
+```scss
+// block
+.leftright {
+    // variable
+    $self: &;
+
+    // element
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "right"
+            "left";
+
+        // media query
+        @media screen and (min-width: 768px) {
+            grid-template-areas: "left right";
+
+            // modifier
+            &--reverse {
+                grid-template-areas: "right left";
+            }
+        }
+    }
+
+    // element
+    &__container {
+        border: 1px solid #efefef;
+
+        // modifier
+        &--rounded {
+            border-radius: 7px;
+            overflow: hidden;
+        }
+    }
+}
+```
+
+## Resources
+* [BEM and SASS: A Perfect Match](https://andrew-barnes.medium.com/bem-and-sass-a-perfect-match-5e48d9bc3894)
+* [Using Sass to Control Scope With BEM Naming](https://css-tricks.com/using-sass-control-scope-bem-naming/)

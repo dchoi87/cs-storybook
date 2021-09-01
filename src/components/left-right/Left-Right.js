@@ -5,7 +5,7 @@ import './Left-Right.scss';
 export const LeftRight = ({ src, content, background, isReverse, hasRoundedCorners, crop }) => {
     const modifiers = {
         roundedCorners: hasRoundedCorners ? 'lrb--rounded' : '',
-        reverse: isReverse ? 'reverse' : '',
+        reverse: isReverse ? 'lrb__grid--reverse' : '',
         crop: crop !== 'none' ? `lrb--crop ${crop}` : ''
     }
     return (
