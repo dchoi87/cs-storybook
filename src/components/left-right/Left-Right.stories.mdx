@@ -44,6 +44,45 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mi eros, semper n
     {(args) => <LeftRight {...args} />}
 </Story>
 
+## Media Bleed Right
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mi eros, semper nec massa eu, semper aliquet ipsum. Nunc molestie libero sit amet bibendum hendrerit. Curabitur egestas auctor ultrices. Nunc pharetra massa non nibh sodales condimentum. Integer laoreet lacus non enim interdum finibus.
+
+<Story
+    name="Media Bleed Right"
+    args={{
+        isFullWidth: true,
+        crop: 'short'
+    }}>
+    {(args) => <LeftRight {...args} />}
+</Story>
+
+## Embeded Video
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mi eros, semper nec massa eu, semper aliquet ipsum. Nunc molestie libero sit amet bibendum hendrerit. Curabitur egestas auctor ultrices. Nunc pharetra massa non nibh sodales condimentum. Integer laoreet lacus non enim interdum finibus.
+
+<Story
+    name="Embeded Video"
+    args={{
+        type: 'video',
+        hasRoundedCorners: true
+    }}>
+    {(args) => <LeftRight {...args} />}
+</Story>
+
+## Embeded Map
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mi eros, semper nec massa eu, semper aliquet ipsum. Nunc molestie libero sit amet bibendum hendrerit. Curabitur egestas auctor ultrices. Nunc pharetra massa non nibh sodales condimentum. Integer laoreet lacus non enim interdum finibus.
+
+<Story
+    name="Embeded Map"
+    args={{
+        type: 'map',
+        crop: 'short',
+    }}>
+    {(args) => <LeftRight {...args} />}
+</Story>
+
 ## Props
 
 <ArgsTable of={LeftRight} />

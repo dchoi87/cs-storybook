@@ -1,4 +1,13 @@
 export const argTypes = {
+    type: {
+        name: "Media Type",
+        control: { type: 'select' },
+        options: [
+            'image',
+            'video',
+            'map'
+        ],
+    },
     src: {
         name: "Media Source",
     },
@@ -28,6 +37,7 @@ export const argTypes = {
             'zodiac-blue',
             'alice-gray',
             'solitude',
+            'white',
         ],
     },
     crop: {
@@ -46,4 +56,7 @@ export const argTypes = {
     hasRoundedCorners: {
         name: "Rounded Corners",
     },
+    isFullWidth: {
+        name: "Full Width"
+    }
 };

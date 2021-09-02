@@ -5,7 +5,7 @@ body {
 // SASS x BEM
 .leftright {
     $self: &;
-    border: 1px dashed #ccc;
+    // border: 1px dashed #ccc;
 
     &__grid {
         display: grid;
@@ -23,41 +23,47 @@ body {
             }
         }
     }
-    &__content {
-        &-left {
-            grid-area: left;
-            display: flex;
-            align-items: center;
-            padding: 15px;
-            font-family: "Gotham 3r", "Gotham A", "Gotham B", Arial, sans-serif;
-            font-weight: 300;
 
-            h1, p {
-                margin: 5px 0;
-                display: block;
-            }
-        }
-        &-right {
-            grid-area: right;
+    &__leftCol {
+        grid-area: left;
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        font-family: "Gotham 3r", "Gotham A", "Gotham B", Arial, sans-serif;
+        font-weight: 300;
+
+        h1, p {
+            margin: 5px 0;
+            display: block;
         }
     }
 
-    // modifiers
-    &--rounded {
-        border-radius: 7px;
-        overflow: hidden;
-    }
+    &__rightCol {
+        grid-area: right;
 
-    &--crop {
-        #{$self}__media {
-            img,
-            iframe {
-                object-fit: cover;
+        &--full-width {
+            @media screen and (min-width: 768px) {
+                max-width: 50vw;
+                width: 50vw;
+                position: relative;
             }
         }
-        &.short {
+    }
+
+    &__media {
+        img,
+        iframe {
+            object-fit: cover;
+        }
+
+        &--crop-short {
+            .responsive-iframe {
+                padding-top: unset;
+            }
+
             img,
             iframe {
+                position: unset;
                 height: 250px;
 
                 @media screen and (min-width: 768px) {
@@ -69,21 +75,22 @@ body {
                 }
             }
         }
-        &.medium {
+
+        &--crop-medium {
+            .responsive-iframe {
+                padding-top: unset;
+            }
+            
             img,
             iframe {
+                position: unset;
                 height: 350px;
             }
         }
     }
 
-    &--full-width {
-        #{$self}__content-right {
-            @media screen and (min-width: 768px) {
-                max-width: 50vw;
-                width: 50vw;
-                position: relative;
-            }
-        }
+    &--rounded {
+        border-radius: 7px;
+        overflow: hidden;
     }
 }

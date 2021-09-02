@@ -10,12 +10,28 @@ h1 {
     line-height: 1.1;
     color: #dc1e34;
 }
-// image
+// responsive
 .responsive {
     display: block;
     width: 100%;
     height: auto;
 }
+.responsive-iframe {
+    display: flex;
+    position: relative;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
 // backgrounds
 .bg-red {
     background-color: #dc1e34;
@@ -57,7 +73,7 @@ h1 {
     background-color: #e9e9e9;
 }
 .bg-gray-light {
-    background-color: #fff;
+    background-color: #f8f9f8;
 }
 .bg-electric-blue {
     background-color: #2170d3;
@@ -73,4 +89,7 @@ h1 {
 }
 .bg-solitude {
     background-color: #e8edfa;
+}
+.bg-white {
+    background-color: #fff;
 }
