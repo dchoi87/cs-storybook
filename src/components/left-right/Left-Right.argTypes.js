@@ -45,8 +45,8 @@ export const argTypes = {
         control: { type: 'radio' },
         options: [
             'none',
-            'short',
-            'medium'
+            'auto',
+            'fixed'
         ],
     },
     isReverse: {

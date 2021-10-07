@@ -1,11 +1,39 @@
-// overwrite for full width shenanigans
+// Missing Styles for Copy; Do not include
+.cta {
+    background: #dc1e34;
+    color: #fff;
+    margin: 10px 0;
+    border-radius: 50px;
+    min-width: auto;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 25px;
+    font-size: 16px;
+    font-family: "Gotham 5r","Gotham A","Gotham B",Arial,sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    position: relative;
+    padding: 10px 25px;
+    text-decoration: none;
+    display: inline-block;
+}
+.leftright__copy h2 {
+    line-height: 1.1;
+    font-size: 36px;
+    font-family: "Gotham 3r","Gotham A","Gotham B",Arial,sans-serif;
+    font-weight: 300;
+    margin: 0 0 12px;
+    color: #dc1e34;
+    font-style: normal;
+}
+
+// Required for full width bleed
 body {
     overflow-x: hidden;
 }
-// SASS x BEM
+// Left Right
 .leftright {
     $self: &;
-    // border: 1px dashed #ccc;
 
     &__grid {
         display: grid;
@@ -28,9 +56,10 @@ body {
         grid-area: left;
         display: flex;
         align-items: center;
-        padding: 15px;
+        padding: 30px;
         font-family: "Gotham 3r", "Gotham A", "Gotham B", Arial, sans-serif;
         font-weight: 300;
+        line-height: 1.6;
 
         h1, p {
             margin: 5px 0;
@@ -40,6 +69,7 @@ body {
 
     &__rightCol {
         grid-area: right;
+        display: flex;
 
         &--full-width {
             @media screen and (min-width: 768px) {
@@ -51,19 +81,28 @@ body {
     }
 
     &__media {
+        width: 100%;
+        height: 100%;
+
         img,
         iframe {
-            object-fit: cover;
+            display: block;
+            width: 100%;
+            height: auto;
         }
 
-        &--crop-short {
-            .responsive-iframe {
-                padding-top: unset;
-            }
-
+        &--crop-auto {
             img,
             iframe {
-                position: unset;
+                object-fit: cover;
+                height: 100%;
+            }
+        }
+
+        &--crop-fixed {
+            img,
+            iframe {
+                object-fit: cover;
                 height: 250px;
 
                 @media screen and (min-width: 768px) {
@@ -73,18 +112,6 @@ body {
                 @media screen and (min-width: 992px) {
                     height: 280px;
                 }
-            }
-        }
-
-        &--crop-medium {
-            .responsive-iframe {
-                padding-top: unset;
-            }
-            
-            img,
-            iframe {
-                position: unset;
-                height: 350px;
             }
         }
     }
