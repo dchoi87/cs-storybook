@@ -23,6 +23,7 @@ export const LeftRight = ({
             <div className={ `leftright__grid ${modifiers.reverse}` }>
                 <div className={ `leftright__leftCol bg-${background}` }>
                     <div className="leftright__copy">
+                        {/* content */}
                         <h2 className="">Conditions We Treat</h2>
                         <p>{ content }</p>
                         <div className="callToAction">
@@ -38,7 +39,7 @@ export const LeftRight = ({
                             ) : type === 'video' ? (
                                 <iframe width="100%" height="315" src="https://www.youtube.com/embed/NwaZ1TyiwLk" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                             ) : (
-                                <img alt="" className="responsive" src={ src } />
+                                <img alt="img" className="responsive" src={ src } />
                             )
                         }
                     </div>
