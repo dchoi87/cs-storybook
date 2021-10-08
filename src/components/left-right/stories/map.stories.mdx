@@ -1,0 +1,89 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import { LeftRight } from '../Left-Right';
+import { argTypes } from '../Left-Right.argTypes';
+
+<Meta
+    title="Components/Left Right/Map"
+    component={ LeftRight }
+    args={ LeftRight.defaultProps }
+    argTypes={ argTypes }
+/>
+
+# Embedded Map
+
+Placeholder
+
+## 1. Default
+
+### No Crop
+
+<Story
+    name="Default (No Crop)"
+    args={{
+        type: 'map',
+    }}>
+    {(args) => <LeftRight {...args} />}
+</Story>
+
+### Auto Crop
+
+<Story
+    name="Default (Auto Crop)"
+    args={{
+        type: 'map',
+        crop: 'auto'
+    }}>
+    {(args) => <LeftRight {...args} />}
+</Story>
+
+### Fixed Crop
+
+<Story
+    name="Default (Fixed Crop)"
+    args={{
+        type: 'map',
+        crop: 'fixed'
+    }}>
+    {(args) => <LeftRight {...args} />}
+</Story>
+
+## 2. Full Width Bleed
+
+### No Crop
+
+<Story
+    name="Full Width (No Crop)"
+    args={{
+        type: 'map',
+        isFullWidth: true,
+    }}>
+    {(args) => <LeftRight {...args} />}
+</Story>
+
+### Auto Crop
+
+<Story
+    name="Full Width (Auto Crop)"
+    args={{
+        type: 'map',
+        isFullWidth: true,
+        crop: 'auto'
+    }}>
+    {(args) => <LeftRight {...args} />}
+</Story>
+
+### Fixed Crop
+
+<Story
+    name="Full Width (Fixed Crop)"
+    args={{
+        type: 'map',
+        isFullWidth: true,
+        crop: 'fixed'
+    }}>
+    {(args) => <LeftRight {...args} />}
+</Story>
+
+# Props
+
+<ArgsTable of={LeftRight} />
