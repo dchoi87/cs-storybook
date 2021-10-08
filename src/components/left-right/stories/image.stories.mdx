@@ -18,36 +18,30 @@ Placeholder
 ### No Crop
 
 <Story
-    name="Default (No Crop)">
+    name="Default">
     {(args) => <LeftRight {...args} />}
 </Story>
 
 ### Auto Crop
 
-<Story
-    name="Default (Auto Crop)"
-    args={{
-        crop: 'auto'
-    }}>
-    {(args) => <LeftRight {...args} />}
-</Story>
+<LeftRight
+    {...LeftRight.defaultProps}
+    crop="auto"
+    />
 
 ### Fixed Crop
 
-<Story
-    name="Default (Fixed Crop)"
-    args={{
-        crop: 'fixed'
-    }}>
-    {(args) => <LeftRight {...args} />}
-</Story>
+<LeftRight
+    {...LeftRight.defaultProps}
+    crop="fixed"
+    />
 
 ## 2. Full Width Bleed
 
 ### No Crop
 
 <Story
-    name="Full Width (No Crop)"
+    name="Full Width"
     args={{
         isFullWidth: true,
     }}>
@@ -56,22 +50,36 @@ Placeholder
 
 ### Auto Crop
 
+<LeftRight
+    {...LeftRight.defaultProps}
+    isFullWidth={true}
+    crop="auto"
+    />
+
+### Fixed Crop
+
+<LeftRight
+    {...LeftRight.defaultProps}
+    isFullWidth={true}
+    crop="fixed"
+    />
+
+## 3. Rounded Corners
+
 <Story
-    name="Full Width (Auto Crop)"
+    name="Rounded Corners"
     args={{
-        isFullWidth: true,
-        crop: 'auto'
+        hasRoundedCorners: true
     }}>
     {(args) => <LeftRight {...args} />}
 </Story>
 
-### Fixed Crop
+## 4. Reversed
 
 <Story
-    name="Full Width (Fixed Crop)"
+    name="Reversed"
     args={{
-        isFullWidth: true,
-        crop: 'fixed'
+        isReverse: true
     }}>
     {(args) => <LeftRight {...args} />}
 </Story>

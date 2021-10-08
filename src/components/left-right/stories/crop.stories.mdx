@@ -9,9 +9,9 @@ import { argTypes } from '../Left-Right.argTypes';
     argTypes={ argTypes }
 />
 
-# Left Right Component
+# Crop Options
 
-Overview of crop options
+Placeholder
 
 ## 1. No Crop (Responsive Image)
 
@@ -19,20 +19,15 @@ Component's size will be based on image **as long as copy content is not greater
 
 ### Copy Height <= Media Height
 
-<Story
-    name="No Crop (Media)" >
-    {(args) => <LeftRight {...args} />}
-</Story>
+<LeftRight
+    {...LeftRight.defaultProps} />
 
 ### Copy Height > Media Height
 
-<Story
-    name="No Crop (Copy)"
-    args={{
-        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-    }}>
-    {(args) => <LeftRight {...args} />}
-</Story>
+<LeftRight
+    {...LeftRight.defaultProps}
+    content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    />
 
 ## 2. Auto Crop
 
@@ -46,24 +41,18 @@ Ideal solution for both scenarios but some caveats:
 
 ### Copy Height <= Media Height
 
-<Story
-    name="Auto Crop (Media)"
-    args={{
-        crop: 'auto'
-    }}>
-    {(args) => <LeftRight {...args} />}
-</Story>
+<LeftRight
+    {...LeftRight.defaultProps}
+    crop="auto"
+    />
 
 ### Copy Height > Media Height
 
-<Story
-    name="Auto Crop (Copy)"
-    args={{
-        crop: 'auto',
-        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-    }}>
-    {(args) => <LeftRight {...args} />}
-</Story>
+<LeftRight
+    {...LeftRight.defaultProps}
+    content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    crop="auto"
+    />
 
 ## 3. Fixed Crop
 
@@ -77,21 +66,15 @@ In this example, crop height is fixed at three separate breakpoints:
 
 ### Copy Height <= Media Height
 
-<Story
-    name="Fixed Crop (Media)"
-    args={{
-        crop: 'fixed'
-    }}>
-    {(args) => <LeftRight {...args} />}
-</Story>
+<LeftRight
+    {...LeftRight.defaultProps}
+    crop="fixed"
+    />
 
 ### Copy Height > Media Height
 
-<Story
-    name="Fixed Crop (Copy)"
-    args={{
-        crop: 'fixed',
-        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-    }}>
-    {(args) => <LeftRight {...args} />}
-</Story>
+<LeftRight
+    {...LeftRight.defaultProps}
+    content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    crop="fixed"
+    />
