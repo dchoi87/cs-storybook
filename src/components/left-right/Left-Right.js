@@ -15,7 +15,7 @@ export const LeftRight = ({
     const modifiers = {
         roundedCorners: hasRoundedCorners ? 'leftright--rounded' : '',
         reverse: isReverse ? 'leftright__grid--reverse' : '',
-        crop: crop !== 'none' ? `leftright__media--crop-${crop}` : '',
+        crop: crop !== 'none' || type !== 'image' ? `leftright__media--crop-${crop}` : '',
         fullwdith: isFullWidth ? `leftright__rightCol--full-width` : '',
     }
     return (
