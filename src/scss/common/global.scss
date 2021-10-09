@@ -1,5 +1,12 @@
 // MDX Overwrites
-.sbdocs {
+.sbdocs-wrapper {
+    // Text
+    .sbdocs-p,
+    .sbdocs-li {
+        font-family: 'Nunito', sans-serif;
+        font-weight: 300;
+        color: #494949;
+    }
     h1, h2, h3, h4, h5, h6, .sbdocs-title {
         line-height: 1.1;
         font-family: "Gotham 3r","Gotham A","Gotham B",Arial,sans-serif;
@@ -8,17 +15,44 @@
         font-style: normal;
     }
     h3, h4, h5, h6 {
-        font-family: "Nunito Sans",-apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-family: 'Nunito', sans-serif;
         color: #000;
     }
     h3 {
-        font-size: 16px;
+        font-size: 18px;
         margin: 25px 0 15px!important;
-        font-weight: 500;
+        font-weight: 600;
+    }
+    // Code
+    .docblock-source {
+        border: 0;
+        border-radius: 7px;
+        box-shadow: none;
+        background: #f8f8f8;
+    }
+    .os-host + div {
+        display: none;
+    }
+    code {
+        border: 0!important;
+        font-family: 'Hack'!important;
+    }
+    // Table
+    .docblock-argstable {
+        font-family: 'Nunito', sans-serif;
+    }
+    .docblock-argstable-body {
+        box-shadow: none;
+        border: 1px solid #efefef;
+        border-radius: 0;
+
+        tr {
+            border-top-color: #efefef!important;
+        }
     }
 }
 
-// global
+// Global
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -52,7 +86,7 @@ h1 {
     }
 }
 
-// backgrounds
+// Backgrounds
 .bg-red {
     background-color: #dc1e34;
 }
